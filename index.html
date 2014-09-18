@@ -10,14 +10,27 @@
 			<button class="up">+</button>
 			<button class="down">-</button>
 			<button class="reset">reset</button>
+			<input type="checkbox" class="powersaving"> Power Save
 		</container>
 	<script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
 	<script src="src/thermostat.js"></script>
 	<script>
 		var thermostat = new Thermostat
+		
 		$('.tempdisplay').text(thermostat.temperature);
+		
 		$('.up').click(function(){
 			thermostat.raiseTemperature();
+			$('.tempdisplay').text(thermostat.temperature);
+		})	
+
+		$('.down').click(function(){
+			thermostat.lowerTemperature();
+			$('.tempdisplay').text(thermostat.temperature);
+		})
+
+		$('.reset').click(function(){
+			thermostat.reset();
 			$('.tempdisplay').text(thermostat.temperature);
 		})
 	</script>
