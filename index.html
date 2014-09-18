@@ -1,0 +1,25 @@
+<!doctype html>
+<meta charset='utf-8'>
+<html>
+	<head>
+		<title>Thermostat.js</title>
+	</head>
+	<body>
+		<container>
+			<h1><span class="tempdisplay">--</span>º</h1>
+			<button class="up">+</button>
+			<button class="down">-</button>
+			<button class="reset">reset</button>
+		</container>
+	<script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+	<script src="src/thermostat.js"></script>
+	<script>
+		var thermostat = new Thermostat
+		$('.tempdisplay').text(thermostat.temperature);
+		$('.up').click(function(){
+			thermostat.raiseTemperature();
+			$('.tempdisplay').text(thermostat.temperature);
+		})
+	</script>
+	</body>
+</html>
