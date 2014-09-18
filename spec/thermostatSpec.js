@@ -37,6 +37,14 @@ describe("Thermostat", function() {
 			thermostat.lowerTemperature();
 			expect(thermostat.temperature).toEqual(19);
 		})
+
+		it('the thermostat can be reset', function(){
+			thermostat.raiseTemperature();
+			thermostat.powerSavingOff();
+			thermostat.reset();
+			expect(thermostat.temperature).toEqual(20);
+			expect(thermostat.powerSaving).toBe(true);
+		})
 	})
 
 })
