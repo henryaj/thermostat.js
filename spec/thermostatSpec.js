@@ -18,12 +18,22 @@ describe("Thermostat", function() {
 
 	describe("Limits", function(){
 		it('in power saving mode, max temp is 25º', function(){
-			expect(thermostat.maxTemperature()).toBe(25);
+			thermostat.temperature = 25;
+			thermostat.raiseTemperature();
+			expect(thermostat.temperature).toBe(25);
 		})
 
 		it('in normal mode, max temp is 32º', function(){
 			thermostat.powerSavingOff();
-			expect(thermostat.maxTemperature()).toBe(32);
+			thermostat.temperature = 32;
+			thermostat.raiseTemperature();
+			expect(thermostat.temperature).toBe(32);
+		})
+
+		it('in both modes, the min temp is 10º', function(){
+			thermostat.temperature = 10;
+			thermostat.lowerTemperature();
+			expect(thermostat.temperature).toEqual(10);
 		})
 	})
 
