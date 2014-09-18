@@ -7,9 +7,11 @@ describe("Thermostat", function() {
 
 	describe("Thermostat by default", function(){
 		it('is set to 20 degrees', function(){
-			console.log(thermostat);
-			console.log(thermostat.temperature);
 			expect(thermostat.temperature).toEqual(20);
+		})
+
+		it('is in power saving mode', function(){
+			expect(thermostat.powerSaving).toBe(true);
 		})
 	})
 })
