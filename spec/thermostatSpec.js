@@ -6,8 +6,10 @@ describe("Thermostat", function() {
 	});
 
 	describe("Thermostat by default", function(){
-		it('is set to 20 degrees',function(){
-			expect(thermostat.Temperature).toEqual(20);
+		it('is set to 20 degrees', function(){
+			console.log(thermostat);
+			console.log(thermostat.temperature);
+			expect(thermostat.temperature).toEqual(20);
 		})
 	})
 })
