@@ -26,4 +26,17 @@ describe("Thermostat", function() {
 			expect(thermostat.maxTemperature()).toBe(32);
 		})
 	})
+
+	describe("User interactions", function(){
+		it('the temperature can be increased', function(){
+			thermostat.raiseTemperature();
+			expect(thermostat.temperature).toEqual(21);
+		})
+
+		it('the temperature can be lowered', function(){
+			thermostat.lowerTemperature();
+			expect(thermostat.temperature).toEqual(19);
+		})
+	})
+
 })

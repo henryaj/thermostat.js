@@ -12,5 +12,12 @@ Thermostat.prototype.maxTemperature = function() {
 	return 32;
 };
 
+Thermostat.prototype.raiseTemperature = function(first_argument) {
+	this.temperature += 1;
+};
+
+Thermostat.prototype.lowerTemperature = function(first_argument) {
+	this.temperature -= 1;
+};
 
 
