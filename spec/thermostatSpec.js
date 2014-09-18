@@ -57,4 +57,23 @@ describe("Thermostat", function() {
 		})
 	})
 
+	describe("Monitoring energy use", function(){
+		
+		it('knows energy use is high when temp is > 25º', function(){
+			thermostat.temperature = 26;
+			expect(thermostat.energyUse()).toEqual("high");
+		})
+
+		it('knows energy use is medium when temp is > 18º and < 25º', function(){
+			thermostat.temperature = 19;
+			expect(thermostat.energyUse()).toEqual("medium");
+		})
+
+		it('knows energy use is low when temp is < 18º', function(){
+			thermostat.temperature = 17;
+			expect(thermostat.energyUse()).toEqual("low");
+		})
+
+	})
+
 })
